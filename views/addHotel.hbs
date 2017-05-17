@@ -1,0 +1,83 @@
+<img src="/images/bonvo.png" alt="beautiful image" >
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <!--<li class="active"><a href="/addDestination">Add travel destination <span class="sr-only">(current)</span></a></li>-->
+                <li><a href="/addDestination">Add travel destination</a></li>
+                <li class="active"><a href="/addHotel">Add Hotel<span class="sr-only">(current)</span></a></li>
+            </ul>
+            <form class="navbar-form navbar-left" action="/getDestination" method="post">
+                <div class="form-group">
+                    <input type="text" class="form-control" name="name" placeholder="travel destination">
+                </div>
+                <button type="submit" class="btn btn-default">Search</button>
+            </form>
+            <form class="navbar-form navbar-left" action="/getHotel" method="post">
+                <div class="form-group">
+                    <input type="text" class="form-control" name="name" placeholder="hotel">
+                </div>
+                <button type="submit" class="btn btn-default">Search</button>
+            </form>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="/addAdmin">Add new admin</a></li>
+                <li><a href="/signIn">Sign Out</a></li>
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>
+<h3>{{title}}</h3>
+
+
+<div class="box box-primary">
+    <form role="form" method="post" action="/addHotel">
+        <div class="col-sm-6 col-sm-offset-3">
+        <div class="box-body">
+            <div class="form-group">
+                <label for="Hotel name">Name of the Hotel</label>
+                <!--<input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">-->
+                <input type="text" class="form-control" name="hotelName" placeholder="Enter hotel name"required>
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">District</label>
+                <!--<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">-->
+                <input type="text" class="form-control" name="district" placeholder="Enter district"required>
+            </div>
+            <div class="form-group">
+                <label for="exampleInputFile">sDescription</label>
+                <!--<input type="file" id="exampleInputFile">-->
+                <input type="text" class="form-control" name="sDescription" placeholder="Enter short description.."required>
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">Description</label>
+
+                <input type="text" class="form-control" name="description" placeholder="Enter long description"required>
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">Rating</label>
+
+                <input type="text" class="form-control" name="rating" placeholder="Enter rating"required>
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">Image URL</label>
+
+                <input type="text" class="form-control" name="imageURL" placeholder="image URL"required>
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">Location latitiude</label>
+                <input type="text" class="form-control" name="lat" placeholder="latitude"required>
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">Location longitude</label>
+                <input type="text" class="form-control" name="long" placeholder="longitude"required>
+            </div>
+        </div>
+        <!-- /.box-body -->
+        <div class="box-footer">
+            <input type="submit" class="form-control" name="submit" value="Submit">
+        </div>
+        </div>
+    </form>
+</div>
+<body background="/images/beach.jpeg" bgproperties="fixed"> </body>

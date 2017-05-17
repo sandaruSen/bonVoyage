@@ -1,0 +1,61 @@
+<img src="/images/bonvo.png" alt="beautiful image" >
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li><a href="/addDestination">Add travel destination </a></li>
+                <li><a href="/addHotel">Add Hotel</a></li>
+            </ul>
+            <form class="navbar-form navbar-left" action="/getDestination" method="post">
+                <div class="form-group">
+                    <input type="text" class="form-control" name="name" placeholder="travel destination">
+                </div>
+                <button type="submit" class="btn btn-default">Search</button>
+            </form>
+            <form class="navbar-form navbar-left" action="/getHotel" method="post">
+                <div class="form-group">
+                    <input type="text" class="form-control" name="name" placeholder="hotel">
+                </div>
+                <button type="submit" class="btn btn-default">Search</button>
+            </form>
+            <ul class="nav navbar-nav navbar-right">
+                <li class="active"><a href="/addAdmin">Add new admin<span class="sr-only">(current)</span></a></li>
+                <li><a href="/signIn">Sign Out</a></li>
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>
+<div class="box box-primary">
+    <form role="form" method="POST" action="/users/signup">
+        <div class="col-sm-6 col-sm-offset-3">
+            <div class="box-body">
+                <div class="form-group">
+                    <label for="name">Name </label>
+
+                    <input type="text" class="form-control" name="name" placeholder="Enter name.."required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email </label>
+
+                    <input type="email" class="form-control" name="email" placeholder="Enter email.."required>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Password</label>
+                    <!--<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">-->
+                    <input type="password" class="form-control" name="password1" placeholder="Enter password"required>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputFile">Confirm password</label>
+                    <!--<input type="file" id="exampleInputFile">-->
+                    <input type="password" class="form-control" name="password2" placeholder="Re-enter password"required>
+                </div>
+            </div>
+            <!-- /.box-body -->
+            <div class="box-footer">
+                <input type="submit" class="form-control" name="submit" value="Submit">
+            </div>
+        </div>
+    </form>
+</div>
+<body background="/images/beach.jpeg" bgproperties="fixed"> </body>

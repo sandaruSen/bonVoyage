@@ -1,0 +1,87 @@
+<img src="/images/bonvo.png" alt="beautiful image" >
+<nav class="navbar navbar-inverse ">
+    <div class="container-fluid">
+
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="/">Home <span class="sr-only">(current)</span></a></li>
+                <!--<li class="profile-username text-black text-bold text-capitalize text-center">{{name}}</li>-->
+            </ul>
+
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>
+
+<div>
+<div class="col-md-6">
+<!--<div class="box box-primary ">-->
+    <div class="box-body box-profile">
+
+        <img src="{{imageURL}}" alt="beautiful image" height="100%" width="100%"  >
+
+        <div class=" ">
+        <h3 class="profile-username text-bold text-capitalize text-left info-box-text ">{{name}}</h3>
+
+        <ul class="list-group list-group-unbordered">
+
+            <li class="list-group-item">
+                <p a>{{description}}</p>
+            </li>
+            <li class="list-group-item">
+                <b>Rating</b>
+                <a class="pull-right">
+                    <a class="pull-right">{{rating}}</a>
+                </a>
+            </li>
+        </ul>
+    </div>
+        <li><a href="">Rate travel destination</a></li>
+        <li><a href="travelBlog">Add travel Blog</a></li>
+
+    </div>
+</div>
+<!--</div>-->
+
+<div class="col-md-4">
+<div class=" box-body box-profile" id="map" style="width:550px;height:550px">
+    <!--<img src="{{imageURL}}" alt="beautiful image" height="100%" width="100%" >-->
+    My map
+
+
+</div>
+</div>
+
+</div>
+
+
+
+{{#each hotels}}
+
+    <div class="col-md-3">
+        <div class="box-body box-profile">
+        <h2 class="profile-username text-bold text-capitalize text-left info-box-text ">{{this.name}}</h2>
+        <img src="{{this.imageURL}}" alt="beautiful image" height="200px" width="300px"  >
+        <p>{{this.description}}</p>
+
+    </div>
+    </div>
+{{/each}}
+
+
+<script>
+    function initMap() {
+        var uluru = {lat: {{lat}}, lng: {{long}} };
+        var map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 10,
+            center: uluru
+        });
+        var marker = new google.maps.Marker({
+            position: uluru,
+            map: map
+        });
+    }
+</script>
+
+<script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC4w-DnLHXxkRhEuiOdKfv3JS9YrBYLa-M=&callback=initMap">
+</script>
