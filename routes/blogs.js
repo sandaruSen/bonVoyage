@@ -12,6 +12,7 @@ var blgCtrl = require('../Controllers/blogController');
 router.get('/', function(req, res, next) {
 
     blgCtrl.getAllBlogs(function (val) {
+        console.log("blogs are blog js :" + val);
         res.render('blogs',{blogs: val});
     });
 

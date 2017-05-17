@@ -37,6 +37,7 @@ var signUp=require('./routes/users');
 var addBlog=require('./routes/addBlog');
 var updateTravel=require('./routes/updateTravel');
 var updateHotel=require('./routes/updateHotel');
+var updateDestination=require('./routes/updateDestination')
 var app = express();
 
 //mongoose.connect('mongodb://127.0.0.1:27017/bonVoyageDatabase');
@@ -111,6 +112,7 @@ app.use('/hillcountry',hillcountry);
 app.use('/addBlog',addBlog);
 app.use('/updateTravel',updateTravel);
 app.use('/updateHotel',updateHotel);
+app.use('updateDestination',updateDestination);
 
 
 
