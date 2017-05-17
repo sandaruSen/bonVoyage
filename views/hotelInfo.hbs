@@ -53,7 +53,7 @@
                 <li class="list-group-item">
                     <b>Rating</b>
                     <a class="pull-right">
-                        <a class="pull-right">{{rating}}</a>
+                        <a class="pull-right">{{rate}}</a>
                     </a>
                 </li>
             </ul>
@@ -61,22 +61,30 @@
         <!--<input type="submit" class="form-control" name="Rate" value="Rate Destination">-->
 
         <li><a href="">Rate hotel</a></li>
-        {{lat}}
-        {{long}}
 
     </div>
 </div>
-<div class=" " id="map" style="width:400px;height:400px"> >
-    <!--<img src="{{imageURL}}" alt="beautiful image" height="100%" width="100%" >-->
-    My map
+<!--<div class=" " id="map" style="width:400px;height:400px"> >-->
+    <!--&lt;!&ndash;<img src="{{imageURL}}" alt="beautiful image" height="100%" width="100%" >&ndash;&gt;-->
+    <!--My map-->
 
 
+<!--</div>-->
+
+<div class="col-md-4">
+    <div class=" box-body box-profile" id="map" style="width:550px;height:550px">
+        <!--<img src="{{imageURL}}" alt="beautiful image" height="100%" width="100%" >-->
+        My map
+
+
+    </div>
 </div>
+
 <script>
     function initMap() {
-        var uluru = {lat: -25.363, lng: 131.044};
+        var uluru = {lat: {{lat}}, lng:{{long}} };
         var map = new google.maps.Map(document.getElementById('map'), {
-            zoom: 4,
+            zoom: 10,
             center: uluru
         });
         var marker = new google.maps.Marker({
@@ -86,5 +94,8 @@
     }
 </script>
 
-<script async defer src="https://maps.googleapis.com/maps/api/js?keyAIzaSyC4w-DnLHXxkRhEuiOdKfv3JS9YrBYLa-M=YOUR_API_KEY&callback=initMap"
-        type="text/javascript"></script>
+
+
+<script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC4w-DnLHXxkRhEuiOdKfv3JS9YrBYLa-M=&callback=initMap">
+</script>

@@ -9,6 +9,7 @@ router.post('/', function(req, res, next) {
     t.email=req.body.email.toLowerCase();
     t.description=req.body.description;
     t.approved="no";
+    t.imageURL=req.body.imageURL;
     t.save();
     res.render('index', { title: '' });
 });

@@ -5,7 +5,8 @@ var blogSchema = new Schema({
     name   : String,
     description     : String,
     email : String,
-    approved : String
+    approved : String,
+    imageURL :String
 
 });
 module.exports = mongoose.model('Blog', blogSchema);

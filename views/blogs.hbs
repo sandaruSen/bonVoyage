@@ -15,12 +15,12 @@
 
 {{#each blogs}}
 
-    <div class="col-md-4">
+    <div class="col-md-6">
         <h2 class="profile-username text-bold text-capitalize text-left info-box-text ">{{this.name}}</h2>
-
+        <img src="{{imageURL}}" alt="beautiful image" height="100%" width="100%"  >
         <p>{{this.description}}</p>
         <h2></h2>
-        <h4>{{this.email}}</h4>
+        <h4>By :{{this.email}}</h4>
 
     </div>
 

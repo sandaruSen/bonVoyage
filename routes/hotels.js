@@ -24,9 +24,10 @@ router.post('/', function(req, res, next) {
         var imageURL=hotels.imageURL;
         var lat=hotels.lat;
         var long=hotels.long;
+        var rate=hotels.rate;
 
         console.log(name);
-        res.render('hotelInfo', { name: name, district:district ,sDescription:sDescription ,description:description, imageURL:imageURL, lat:lat, long:long });
+        res.render('hotelInfo', { name: name, district:district ,sDescription:sDescription ,description:description, imageURL:imageURL, rate:rate, lat:lat, long:long });
 
 
     });

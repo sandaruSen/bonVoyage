@@ -11,6 +11,8 @@ var mongoose = require('mongoose');
 var flash=require('connect-flash');
 var expressValidator= require('express-validator');
 var session=require('express-session');
+// var mocha=require('mocha');
+// var chai=require('chai');
 var LocalStrategy = require('passport-local');
 
 require('./Controllers/passport')(passport);
@@ -32,10 +34,12 @@ var rainforests=require('./routes/rainforests');
 var hillcountry=require('./routes/hills');
 var signUp=require('./routes/users');
 //var adminHome=require('./routes/adminHome')
-var addBlog=require('./routes/addBlog')
+var addBlog=require('./routes/addBlog');
+var updateTravel=require('./routes/updateTravel');
+var updateHotel=require('./routes/updateHotel');
 var app = express();
 
-
+// mongoose.connect('mongodb://127.0.0.1:27017/bonVoyageDatabase');
 mongoose.connect('mongodb://root:123@ds143131.mlab.com:43131/bonvoyagedatabase');
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -104,7 +108,9 @@ app.use('/heritage',heritage);
 app.use('/wildlife',wildlife);
 app.use('/rainforests',rainforests);
 app.use('/hillcountry',hillcountry);
-app.use('/addBlog',addBlog)
+app.use('/addBlog',addBlog);
+app.use('/updateTravel',updateTravel);
+app.use('/updateHotel',updateHotel);
 
 
 

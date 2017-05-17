@@ -1,23 +1,23 @@
 <img src="/images/bonvo.png" alt="beautiful image" >
-<nav class="navbar navbar-default">
+<nav class="navbar navbar-inverse">
     <div class="container-fluid">
 
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="/addDestination">Add travel destination <span class="sr-only">(current)</span></a></li>
+                <li ><a href="/addDestination">Add travel destination </a></li>
                 <li><a href="/addHotel">Add Hotel</a></li>
             </ul>
-            <form class="navbar-form navbar-left" action="/getDestination" method="post">
+            <form class="navbar-form navbar-left" action="/updateTravel" method="post">
                 <div class="form-group">
                     <input type="text" name="name" class="form-control" placeholder="travel destination">
                 </div>
-                <button type="submit" class="btn btn-default">Search</button>
+                <button type="submit" class="btn btn-default">Update</button>
             </form>
-            <form class="navbar-form navbar-left" action="/getHotel" method="post">
+            <form class="navbar-form navbar-left" action="/updateHotel" method="post">
                 <div class="form-group">
                     <input type="text" name="name" class="form-control" placeholder="hotel">
                 </div>
-                <button type="submit" class="btn btn-default">Search</button>
+                <button type="submit" class="btn btn-default">Update</button>
             </form>
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="/addAdmin">Add new admin</a></li>
@@ -26,7 +26,7 @@
         </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
 </nav>
-<h3>{{title}}</h3>
+
 
 <div class="box box-primary" >
 
@@ -71,12 +71,12 @@
             </div>
         </div>
 
-        <div class="box-footer">
+        <div class="col-sm-4 col-sm-offset-4 profile-username text-bold text-capitalize text-left info-box-text">
             <input type="submit" class="form-control" name="submit" value="Submit">
         </div>
         </div>
     </form>
 </div>
-<body background="/images/beach.jpeg" bgproperties="fixed"> </body>
+<body background="/images/star.jpg" bgproperties="fixed"> </body>
 
 

@@ -14,7 +14,7 @@ router.post('/', function(req, res, next) {
     h.district=req.body.district.toLowerCase();
     h.sDescription=req.body.sDescription;
     h.description=req.body.description;
-    h.rate=req.body.rating.toLowerCase();
+    h.rate=req.body.rate.toLowerCase();
     h.imageURL=req.body.imageURL;
     h.lat=req.body.lat;
     h.long=req.body.long;
