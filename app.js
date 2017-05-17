@@ -39,7 +39,7 @@ var updateTravel=require('./routes/updateTravel');
 var updateHotel=require('./routes/updateHotel');
 var app = express();
 
-// mongoose.connect('mongodb://127.0.0.1:27017/bonVoyageDatabase');
+//mongoose.connect('mongodb://127.0.0.1:27017/bonVoyageDatabase');
 mongoose.connect('mongodb://root:123@ds143131.mlab.com:43131/bonvoyagedatabase');
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
