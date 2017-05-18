@@ -1,0 +1,14 @@
+var hotelCntrl = require('../Controllers/hotelController');
+var mongoose = require('mongoose');
+var expect = require('chai').expect;
+
+
+describe('hotelController',function(){
+
+    it('answer should be an array', function () {
+        hotelCntrl.getHotelByName(function(val) {
+            expect(val).to.be.a('array');
+
+        })
+    });
+})
