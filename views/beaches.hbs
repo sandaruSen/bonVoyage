@@ -1,4 +1,6 @@
 <img src="/images/bonvo.png" alt="beautiful image" width="100%" >
+
+<!--start of the navbar-->
 <nav class="navbar navbar-inverse ">
     <div class="container-fluid">
 
@@ -10,12 +12,14 @@
         </div>
     </div>
 </nav>
+<!--navbar ends-->
 
-
+<!--to list the beaches in the database -->
 {{#each destinations}}
 
         <div class="col-md-4">
             <h2 class="profile-username text-bold text-capitalize text-left info-box-text ">{{this.name}}</h2>
+            <!--get the image url and show the image-->
             <img src="{{this.imageURL}}" alt="beautiful image" height="250px" width="400px"  >
             <p>{{this.description}}</p>
 

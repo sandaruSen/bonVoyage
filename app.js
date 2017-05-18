@@ -37,7 +37,8 @@ var signUp=require('./routes/users');
 var addBlog=require('./routes/addBlog');
 var updateTravel=require('./routes/updateTravel');
 var updateHotel=require('./routes/updateHotel');
-var updateDestination=require('./routes/updateDestination')
+var updateDestination=require('./routes/updateDestination');
+var allDestinations=require('./routes/allDestinations')
 var app = express();
 
 //mongoose.connect('mongodb://127.0.0.1:27017/bonVoyageDatabase');
@@ -114,7 +115,7 @@ app.use('/updateTravel',updateTravel);
 app.use('/updateHotel',updateHotel);
 app.use('updateDestination',updateDestination);
 
-
+app.use('/getAllDestinations', allDestinations);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
