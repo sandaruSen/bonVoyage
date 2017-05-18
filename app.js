@@ -98,7 +98,7 @@ app.use('/', index);
 app.use('/users', users);
 app.use('/addHotel', addHotels);
 app.use('/addDestination', travelDestination);
-app.use('/signIn',sign);
+app.use('/SignIn',sign);
 app.use('/getDestination',destinations);
 app.use('/getHotel',hotels);
 app.use('/addAdmin',admin);
