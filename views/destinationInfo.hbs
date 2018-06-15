@@ -1,4 +1,78 @@
 <img src="/images/bonvo.png" alt="beautiful image" width="100%" >
+
+{{#if number}}
+
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <!--<li ><a href="/addDestination">Add travel destination </a></li>-->
+                    <!--<li><a href="/addHotel">Add Hotel</a></li>-->
+
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Add<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/addDestination">Add travel destination</a></li>
+                            <li><a href="/addHotel">Add Hotel</a></li>
+
+                        </ul>
+                    </li>
+
+
+
+                </ul>
+
+                <form class="navbar-form navbar-left" action="/getDestination" method="post">
+                    <input type="hidden" name="number" value=true>
+
+                    <div class="form-group">
+                        <input type="text" name="name" class="form-control" placeholder="travel destination" required>
+                    </div>
+                    <button type="submit" class="btn btn-default">Search</button>
+                </form>
+                <form class="navbar-form navbar-left" action="/getHotel" method="post" >
+                    <input type="hidden" name="number" value=true>
+                    <div class="form-group">
+                        <input type="text" name="name" class="form-control" placeholder="hotel" required>
+                    </div>
+                    <button type="submit" class="btn btn-default">Search</button>
+                </form>
+                <form class="navbar-form navbar-left" action="/updateTravel" method="post">
+                    <div class="form-group">
+                        <input type="text" name="name" class="form-control" placeholder="travel destination" required>
+                    </div>
+                    <button type="submit" class="btn btn-default">Update</button>
+                </form>
+                <form class="navbar-form navbar-left" action="/updateHotel" method="post" >
+                    <div class="form-group">
+                        <input type="text" name="name" class="form-control" placeholder="hotel" required>
+                    </div>
+                    <button type="submit" class="btn btn-default">Update</button>
+                </form>
+
+
+
+
+
+
+
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Admins <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/addAdmin">Add new admin</a></li>
+                            <li><a href="#">Add new contributor</a></li>
+
+                        </ul>
+                    </li>
+                    <li><a href="/SignIn">Sign Out</a></li>
+
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
+{{else}}
 <nav class="navbar navbar-inverse ">
     <div class="container-fluid">
 
@@ -11,6 +85,9 @@
         </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
 </nav>
+
+{{/if}}
+
 
 <div>
 <div class="col-md-6">
@@ -27,35 +104,12 @@
             <li class="list-group-item">
                 <p a>{{description}}</p>
             </li>
-            <li class="list-group-item">
-                <b>Rating</b>
-                <a class="pull-right">
-                    <a class="pull-right">{{rating}}</a>
-                </a>
-            </li>
+
         </ul>
     </div>
         <!--<li><a href="">Rate travel destination</a></li>-->
         <li><a href="travelBlog">Add travel Blog</a></li>
-        <!--<li><a href="">Add travel Blog</a></li>-->
-
-
-
-
-
-        <form class="form-horizontal " method="post" action="/getHotel">
-            <input type="hidden" name="name" value="{{name}}">
-
-            <div class="col-sm-offset col-sm-10">
-                <button type="submit" class="btn btn-default" name="submit" value="submit">Do you know more about {{name}} ?</button>
-            </div>
-
-        </form>
-
-
-
-
-
+        <li><a href="/addData">Do you know more about {{name}} ?</a></li>
 
 
 
@@ -65,7 +119,6 @@
 
 <div class="col-md-4">
 <div class=" box-body box-profile" id="map" style="width:550px;height:550px">
-    <!--<img src="{{imageURL}}" alt="beautiful image" height="100%" width="100%" >-->
     My map
 
 
@@ -83,6 +136,15 @@
         <h2 class="profile-username text-bold text-capitalize text-left info-box-text ">{{this.name}}</h2>
         <img src="{{this.imageURL}}" alt="beautiful image" height="200px" width="300px"  >
         <p>{{this.description}}</p>
+
+            <form class="form-horizontal " method="post" action="/getHotel">
+                <input type="hidden" name="name" value="{{this.name}}">
+
+                <div class="col-sm-offset col-sm-10">
+                    <button type="submit" class="btn btn-default" name="submit" value="submit">View more</button>
+                </div>
+
+            </form>
 
     </div>
     </div>

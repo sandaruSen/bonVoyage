@@ -12,7 +12,7 @@ router.post('/', function(req, res, next) {
     var name = req.body.name.toLowerCase();
     console.log(name);
 
-
+    var num=req.body.number;
 
     destination.findOne( {"name":name} , function(err,destinations){
         if(err)
@@ -30,6 +30,7 @@ router.post('/', function(req, res, next) {
         var lat=destinations.lat;
         var long=destinations.long;
 
+
         console.log(name);
         console.log(district);
 
@@ -38,7 +39,7 @@ router.post('/', function(req, res, next) {
             if(err)
                 console.log(err);
             console.log("Hotels are : "+hotels)
-            res.render('destinationInfo', { name: name, district:district ,category:category ,description:description,imageURL:imageURL, rating:rating, lat:lat, long:long, hotels:hotels });
+            res.render('destinationInfo', { name: name, district:district ,category:category ,description:description,imageURL:imageURL, rating:rating, lat:lat, long:long,number:num, hotels:hotels });
 
         });
 

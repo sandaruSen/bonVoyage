@@ -35,4 +35,74 @@ router.post('/', function(req, res, next) {
 });
 
 
+
+router.get('/matara', function(req, res, next) {
+
+    destination.find( {"district":"matara"} , function(err,destinations){
+
+        if(err)
+            console.log(err);
+        console.log(destinations)
+
+        h.find( {"district":"matara"} , function(err,hotels){
+            //console.log(district);
+            if(err)
+                console.log(err);
+            console.log("Hotels are : "+hotels)
+            res.render('allDestination', {destinations: destinations , hotels:hotels, number:true });
+
+        });
+
+    });
+
+
+});
+
+
+
+
+router.get('/batticaloa', function(req, res, next) {
+
+    destination.find( {"district":"batticaloa"} , function(err,destinations){
+
+        if(err)
+            console.log(err);
+        console.log(destinations)
+
+        h.find( {"district":"batticaloa"} , function(err,hotels){
+            //console.log(district);
+            if(err)
+                console.log(err);
+            console.log("Hotels are : "+hotels)
+            res.render('allDestination', {destinations: destinations , hotels:hotels, number:true });
+
+        });
+
+    });
+
+
+});
+
+router.get('/nuwara eliya', function(req, res, next) {
+
+    destination.find( {"district":"nuwara eliya"} , function(err,destinations){
+
+        if(err)
+            console.log(err);
+        console.log(destinations)
+
+        h.find( {"district":"nuwara eliya"} , function(err,hotels){
+            //console.log(district);
+            if(err)
+                console.log(err);
+            console.log("Hotels are : "+hotels)
+            res.render('allDestination', {destinations: destinations , hotels:hotels, number:true });
+
+        });
+
+    });
+
+
+});
+
 module.exports = router;

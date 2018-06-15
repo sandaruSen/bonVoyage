@@ -18,16 +18,6 @@ router.get('/', function(req, res, next) {
 
 
 
-    // Blog.find( {} , function(err,blogs){
-    //
-    //     if(err)
-    //         console.log(err);
-    //     console.log(blogs)
-    //
-    //
-    // });
-
-
 });
 
 module.exports = router;

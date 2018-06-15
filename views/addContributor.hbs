@@ -1,7 +1,4 @@
 <img src="/images/bonvo.png" alt="beautiful image" width="100%" >
-
-
-
 {{#if user.number}}
     <nav class="navbar navbar-inverse">
         <div class="container-fluid">
@@ -73,7 +70,6 @@
                         <ul class="dropdown-menu">
                             <li><a href="/travelContent">Travel destination feedback</a></li>
                             <li><a href="/hotelContent">Hotel feedback</a></li>
-                            <li><a href="/travelBlogContent">Travel Blog Content</a></li>
 
                         </ul>
                     </li>
@@ -154,7 +150,7 @@
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Admins <span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li><a href="/addAdmin">Add new admin</a></li>
-                            <li><a href="/addContributor">Add new contributor</a></li>
+                            <li><a href="#">Add new contributor</a></li>
 
                         </ul>
                     </li>
@@ -168,53 +164,36 @@
 
 
 <div class="box box-primary">
-    <form role="form" method="post" action="/addHotel">
+    <form role="form" method="POST" action="/users/signup">
+        <input type="hidden" name="number" value=true>
         <div class="col-sm-6 col-sm-offset-3">
-        <div class="box-body">
-            <div class="form-group">
-                <label for="Hotel name">Name of the Hotel</label>
-                <!--<input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">-->
-                <input type="text" class="form-control" name="hotelName" placeholder="Enter hotel name"required>
-            </div>
-            <div class="form-group">
-                <label for="exampleInputPassword1">District</label>
-                <!--<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">-->
-                <input type="text" class="form-control" name="district" placeholder="Enter district"required>
-            </div>
-            <div class="form-group">
-                <label for="exampleInputFile">Short Description</label>
-                <!--<input type="file" id="exampleInputFile">-->
-                <input type="text" class="form-control" name="sDescription" placeholder="Enter short description.."required>
-            </div>
-            <div class="form-group">
-                <label for="exampleInputPassword1">Description</label>
+            <div class="box-body">
+                <div class="form-group">
+                    <label for="name">Name of the contributor</label>
 
-                <input type="text" class="form-control" name="description" placeholder="Enter long description"required>
-            </div>
-            <div class="form-group">
-                <label for="exampleInputPassword1">Rating</label>
+                    <input type="text" class="form-control" name="name" placeholder="Enter name.."required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email </label>
 
-                <input type="text" class="form-control" name="rate" placeholder="Enter rating"required>
+                    <input type="email" class="form-control" name="email" placeholder="Enter email.."required>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Password</label>
+                    <!--<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">-->
+                    <input type="password" class="form-control" name="password1" placeholder="Enter password"required>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputFile">Confirm password</label>
+                    <!--<input type="file" id="exampleInputFile">-->
+                    <input type="password" class="form-control" name="password2" placeholder="Re-enter password"required>
+                </div>
             </div>
-            <div class="form-group">
-                <label for="exampleInputPassword1">Image </label>
-
-                <input type="text" class="form-control" name="imageURL" placeholder="image URL"required>
+            <!-- /.box-body -->
+            <div class="col-sm-4 col-sm-offset-4 profile-username text-bold text-capitalize text-left info-box-text">
+                <input type="submit" class="form-control" name="submit" value="Submit">
             </div>
-            <div class="form-group">
-                <label for="exampleInputPassword1">Location latitiude</label>
-                <input type="text" class="form-control" name="lat" placeholder="latitude"required>
-            </div>
-            <div class="form-group">
-                <label for="exampleInputPassword1">Location longitude</label>
-                <input type="text" class="form-control" name="long" placeholder="longitude"required>
-            </div>
-        </div>
-        <!-- /.box-body -->
-        <div class="col-sm-4 col-sm-offset-4 profile-username text-bold text-capitalize text-left info-box-text">
-            <input type="submit" class="form-control" name="submit" value="Submit">
-        </div>
         </div>
     </form>
 </div>
-<body background="/images/ho.jpg" bgproperties="fixed" > </body>
+<body background="/images/beach.jpeg" bgproperties="fixed"> </body>

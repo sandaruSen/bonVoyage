@@ -17,6 +17,15 @@
         <img src="{{this.imageURL}}" alt="beautiful image" height="250px" width="380px"  >
         <p>{{this.description}}</p>
 
+
+        <form class="form-horizontal " method="post" action="/getDestination">
+            <input type="hidden" name="name" value="{{this.name}}">
+
+            <div class="col-sm-offset col-sm-10">
+                <button type="submit" class="btn btn-default" name="submit" value="submit">View more</button>
+            </div>
+
+        </form>
     </div>
 
 {{/each}}

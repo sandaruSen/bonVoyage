@@ -48,9 +48,13 @@ router.get('/travelBlog', function(req, res, next) {
 });
 
 
+router.get('/addData', function(req, res, next) {
+    res.render('addData', { title: 'BonVoyage' });
+});
 
-
-
+router.get('/addDatah', function(req, res, next) {
+    res.render('addDatah', { title: 'BonVoyage' });
+});
 
 
 

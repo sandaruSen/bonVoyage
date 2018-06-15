@@ -20,9 +20,10 @@ router.post('/', function(req, res, next) {
         var lat=hotels.lat;
         var long=hotels.long;
         var rate=hotels.rate;
+        var _id=hotels._id;
 
         console.log(name);
-        res.render('updateHotels', { name: name, district:district ,sDescription:sDescription ,description:description, imageURL:imageURL, rate:rate, lat:lat, long:long });
+        res.render('updateHotels', { name: name, district:district ,sDescription:sDescription ,description:description, imageURL:imageURL, rate:rate, lat:lat, long:long, _id:_id });
 
 
     });

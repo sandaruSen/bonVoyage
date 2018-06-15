@@ -27,7 +27,7 @@ module.exports = function() {
             passwordField : 'password',
             passReqToCallback : true // allows us to pass back the entire request to the callback
         },
-        function(req, email, password, done) { // callback with email and password from our form
+        function(req, email, password, number, done) { // callback with email and password from our form
             // find a user whose email is the same as the forms email
             // we are checking to see if the user trying to login already exists
             User.findOne({ 'email' :  email }, function(err, user) {
@@ -80,7 +80,9 @@ module.exports = function() {
 
                         newUser.name = req.body.name;
                         newUser.email    = req.body.email;
+                        newUser.number=req.body.number;
                         newUser.password = newUser.generateHash(password);
+
 
                         // save the user
                         newUser.save(function(err) {

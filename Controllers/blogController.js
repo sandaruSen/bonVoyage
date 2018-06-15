@@ -3,7 +3,7 @@ var express = require('express');
 var Blog = require('../database/blog');
 
 module.exports.getAllBlogs = function (next) {
-    Blog.find( {} , function(err,blogs){
+    Blog.find( {"checked":"yes"} , function(err,blogs){
         if(err)
             console.log(err);
         console.log(blogs);

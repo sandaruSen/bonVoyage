@@ -5,7 +5,7 @@ var blogSchema = new Schema({
     name   : String,
     description     : String,
     email : String,
-    approved : String,
+    checked : String,
     imageURL :String
 
 });

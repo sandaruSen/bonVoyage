@@ -20,12 +20,14 @@ router.post('/', function(req, res, next) {
         var rating=destinations.rating;
         var lat=destinations.lat;
         var long=destinations.long;
+        var _id=destinations._id;
+        console.log(_id);
 
         console.log(name);
         console.log(district);
 
 
-        res.render('updateTravel', { name: name, district:district ,category:category ,description:description,imageURL:imageURL, rating:rating, lat:lat, long:long, });
+        res.render('updateTravel', { name: name, district:district ,category:category ,description:description,imageURL:imageURL, rating:rating, lat:lat, long:long,_id:_id });
     });
 
 

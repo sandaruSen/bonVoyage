@@ -10,7 +10,7 @@ var router = express.Router();
 router.post('/', function(req, res, next) {
     var name = req.body.name.toLowerCase();
     console.log(name);
-
+    var num=req.body.number;
     h.findOne( {"name":name} , function(err,hotels){
         if(err)
             console.log(err);
@@ -27,7 +27,7 @@ router.post('/', function(req, res, next) {
         var rate=hotels.rate;
 
         console.log(name);
-        res.render('hotelInfo', { name: name, district:district ,sDescription:sDescription ,description:description, imageURL:imageURL, rate:rate, lat:lat, long:long });
+        res.render('hotelInfo', { name: name, district:district ,sDescription:sDescription ,description:description, imageURL:imageURL, rate:rate, lat:lat, long:long, number:num });
 
 
     });

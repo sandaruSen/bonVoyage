@@ -37,12 +37,28 @@ var signUp=require('./routes/users');
 var addBlog=require('./routes/addBlog');
 var updateTravel=require('./routes/updateTravel');
 var updateHotel=require('./routes/updateHotel');
-var updateDestination=require('./routes/updateDestination');
-var allDestinations=require('./routes/allDestinations')
+var updateDestination1=require('./routes/updateDestination1');
+var allDestinations=require('./routes/allDestinations');
+var feedback=require('./routes/feedback');
+var feedbackh=require('./routes/feedbackh');
+var contributor=require('./routes/contributor');
+var travelcontent=require('./routes/travelcontent');
+var hotelcontent=require('./routes/hotelcontent');
+var travelblogcontent=require('./routes/travelblogcontent');
+
+var updateHotels=require('./routes/updateHotels');
+
+var saveTravelData=require('./routes/saveTravelData');
+var saveHotelData=require('./routes/saveHotelData');
+var saveTravelBlogContent=require('./routes/saveTravelBlogContent');
+
 var app = express();
 
-//mongoose.connect('mongodb://127.0.0.1:27017/bonVoyageDatabase');
-mongoose.connect('mongodb://root:123@ds143131.mlab.com:43131/bonvoyagedatabase');
+
+mongoose.Promise=global.Promise;
+
+mongoose.connect('mongodb://127.0.0.1:27017/bonVoyageDatabase');
+//mongoose.connect('mongodb://root:123@ds143131.mlab.com:43131/bonvoyagedatabase');
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 
@@ -102,20 +118,41 @@ app.use('/addDestination', travelDestination);
 app.use('/SignIn',sign);
 app.use('/getDestination',destinations);
 app.use('/getHotel',hotels);
+
 app.use('/addAdmin',admin);
+app.use('/addContributor',contributor);
+
 app.use('/travelBlog',index);
 app.use('/blogs',blogs);
+
 app.use('/beaches',beaches);
 app.use('/heritage',heritage);
 app.use('/wildlife',wildlife);
 app.use('/rainforests',rainforests);
 app.use('/hillcountry',hillcountry);
+
 app.use('/addBlog',addBlog);
+
 app.use('/updateTravel',updateTravel);
 app.use('/updateHotel',updateHotel);
-app.use('updateDestination',updateDestination);
+
+app.use('/travelContent',travelcontent);
+app.use('/hotelContent',hotelcontent);
+app.use('/travelBlogContent', travelblogcontent);
+
+app.use('/updateDestination1',updateDestination1);
+app.use('/updateHotels',updateHotels);
 
 app.use('/getAllDestinations', allDestinations);
+app.use('/addData',index);
+app.use('/addDatah',index);
+app.use('/addFeedback', feedback);
+app.use('/addFeedbackh', feedbackh);
+
+
+app.use('/saveTravelData', saveTravelData);
+app.use('/saveHotelData',saveHotelData);
+app.use('/saveTravelBlogContent' ,saveTravelBlogContent);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

@@ -53,31 +53,10 @@ passport.deserializeUser(function (id, done) {
 router.post('/login', passport.authenticate('local',{
     successRedirect: '/adminHome', failureRedirect:'/signIn', failureFlash : true
 }), function (req, res) {
+    // console.log(res)
     res.redirect('/');
 });
 
-/* Register  */
-// router.get('/', function(req, res, next) {
-//   res.send('addAdmin');
-// });
-// /* Register  */
-// router.get('/', function(req, res, next) {
-//     res.send('signIn');
-// });
-
-
-
-
-// router.post('/', passport.authenticate('local-signup', {
-//
-//     successRedirect : '/signIn',
-//     failureRedirect : '/',
-//     failureFlash : true
-//
-// }), function (req, res) {
-//
-//     res.send('success');
-// });
 
 
 
@@ -87,6 +66,7 @@ router.post('/signup', function(req,res){
     var email=req.body.email;
     var password=req.body.password1;
     var password2=req.body.password2;
+    var number=req.body.number;
 
     req.checkBody('name','Name is required').notEmpty();
     var errors =req.validationErrors();
@@ -98,7 +78,8 @@ router.post('/signup', function(req,res){
         var user = new User({
             name : req.body['name'],
             email : req.body['email'],
-            password : req.body['password1']
+            password : req.body['password1'],
+            number :req.body['number']
         });
 
         User.createUser(user, function (err, user) {
