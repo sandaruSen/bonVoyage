@@ -1,3 +1,4 @@
+
 var express = require('express');
 var destination = require("../database/travelDestination");
 var router = express.Router();
