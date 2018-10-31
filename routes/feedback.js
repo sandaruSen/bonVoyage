@@ -2,6 +2,7 @@
  * Created by Sandaru on 5/18/2017.
  */
 
+var feedback;
 var express = require('express');
 var Feedback=require('../database/feedback');
 var router = express.Router();

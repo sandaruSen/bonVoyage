@@ -1,3 +1,4 @@
+var a;
 var express = require('express');
 var destination = require("../database/travelDestination");
 var h = require("../database/hotels");
